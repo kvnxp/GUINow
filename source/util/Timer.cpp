@@ -28,5 +28,6 @@ namespace GP {
         int now = 0; //get system time
         
         Timer::sleepu((milisecond * 1000) - (now - Timer::milestone));
+        Timer::milestone = now;
     }
 }
