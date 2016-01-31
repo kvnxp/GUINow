@@ -5,8 +5,11 @@
  */
 
 #include "Button.h"
+#include "../screen/screen.h"
+#include <cstring>
 #include <stdio.h>
-#include <string>
+#include "../util/Color.h"
+#include "../draw/Draw.h"
 
 namespace GP {
     
@@ -15,10 +18,11 @@ namespace GP {
     }
     
     Button::Button(char* text) : Drawable() {
-        strcpy(this->text, text);
+        std::strcpy(this->text, text);
     }
     
-    void Button::draw() {
-        printf("fghjk%s\n", this->text);
+    void Button::draw(u8* screen) {
+        //printf("fghjk%s\n", this->text);
+        Draw::rectangle(screen, this->dimensions, Color(0xBB, 0xFF, 0xBB));
     }
 }

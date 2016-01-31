@@ -10,7 +10,7 @@
  *
  * Created on 31 januari 2016, 20:27
  */
-
+#pragma once
 #ifndef GUI_H
 #define GUI_H
 

@@ -15,10 +15,10 @@ namespace GP {
     }
     
     void Screen::draw() {
-        printf("Drawing screen\n");
+        //printf("Drawing screen\n");
         int i;
         for(i = 0; i < this->objectCount; i++) {
-            this->objects[i]->draw();
+            this->objects[i]->draw(this->buffer);
         }
     }
     

@@ -10,7 +10,7 @@
  *
  * Created on 26 januari 2016, 0:16
  */
-
+#pragma once
 #ifndef PASIVEEVENTHANDLER_H
 #define PASIVEEVENTHANDLER_H
 

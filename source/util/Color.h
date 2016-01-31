@@ -10,19 +10,21 @@
  *
  * Created on 26 januari 2016, 15:44
  */
-
+#pragma once
 #ifndef COLOR_H
 #define COLOR_H
+
+#include <3ds.h>
 
 namespace GP {
     
     class Color {
     public:
-        int r;
-        int g; 
-        int b;
+        u8 r;
+        u8 g; 
+        u8 b;
         
-        Color(int r, int g, int b) {
+        Color(u8 r, u8 g, u8 b) {
             this->r = r;
             this->g = g;
             this->b = b;

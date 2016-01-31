@@ -10,7 +10,7 @@
  *
  * Created on 25 januari 2016, 23:42
  */
-
+#pragma once
 #ifndef VECTOR2_H
 #define VECTOR2_H
 

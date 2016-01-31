@@ -10,12 +10,12 @@
  *
  * Created on 25 januari 2016, 23:06
  */
-
+#pragma once
 #ifndef TOPSCREEN_H
 #define TOPSCREEN_H
 
 #include "screen.h"
-#include <iostream>
+
 namespace GP {
     
     class TopScreen : public Screen {

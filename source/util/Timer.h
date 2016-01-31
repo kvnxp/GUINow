@@ -10,7 +10,7 @@
  *
  * Created on 26 januari 2016, 15:04
  */
-
+#pragma once
 #ifndef TIMER_H
 #define TIMER_H
 

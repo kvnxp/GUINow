@@ -11,11 +11,13 @@
  * Created on 25 januari 2016, 22:59
  */
 
+#pragma once
 #ifndef SCREEN_H
 #define SCREEN_H
 
-#include "../draw/Drawable.h"
 #include "../util/Vector2.h"
+#include <3ds.h>
+#include "../draw/Drawable.h"
 
 namespace GP {
     
@@ -28,6 +30,7 @@ namespace GP {
         Drawable** objects;
         int objectCount;
     public:
+        u8* buffer;
         Screen();
         ScreenType type;
         Vector2 dimensions;

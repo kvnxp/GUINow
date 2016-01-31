@@ -10,13 +10,13 @@
  *
  * Created on 26 januari 2016, 0:02
  */
-
+#pragma once
 #ifndef BUTTON_H
 #define BUTTON_H
 
 #include "../draw/Drawable.h"
 #include "../util/Rectangle2D.h"
-#include <stdio.h>
+#include <3ds.h>
 
 namespace GP {
     
@@ -33,7 +33,7 @@ namespace GP {
         char* setText();
         
         using Drawable::draw;
-        void draw();
+        void draw(u8* screen);
         
     };
 }

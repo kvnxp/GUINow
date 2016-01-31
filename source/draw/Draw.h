@@ -10,21 +10,25 @@
  *
  * Created on 26 januari 2016, 15:43
  */
-
+#pragma once
 #ifndef DRAW_H
 #define DRAW_H
 
-#include "Color.h"
-#include "Rectangle2D.h"
-#include "Vector2.h"
+#include "../util/Color.h"
+#include "../util/Rectangle2D.h"
+#include "../util/Vector2.h"
+#include "../screen/screen.h"
+#include <3ds.h>
 
 namespace GP {
     
     class Draw {
     public:
-        static void pixel(int x, int y, Color color);
+        static void pixel(Screen *screen, int x, int y, Color color);
+        static void pixel(u8 *screen, int x, int y, Color color);
         static void pixel(Vector2 vector, Color color);
-        static void rectangle(Rectangle2D rectangle, Color color);
+        static void rectangle(Screen* screen, Rectangle2D rectangle, Color color);
+        static void rectangle(u8* screen, Rectangle2D rectangle, Color color);
         static void line();
     };
 }

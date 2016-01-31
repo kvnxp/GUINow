@@ -10,7 +10,7 @@
  *
  * Created on 25 januari 2016, 23:49
  */
-
+#pragma once
 #ifndef BOTTOMSCREEN_H
 #define BOTTOMSCREEN_H
 

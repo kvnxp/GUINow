@@ -10,7 +10,7 @@
  *
  * Created on 25 januari 2016, 23:43
  */
-
+#pragma once
 #ifndef RECTANGLE2D_H
 #define RECTANGLE2D_H
 

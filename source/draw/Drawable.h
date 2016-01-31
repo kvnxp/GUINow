@@ -10,22 +10,21 @@
  *
  * Created on 25 januari 2016, 23:09
  */
-
+#pragma once
 #ifndef DRAWABLE_H
 #define DRAWABLE_H
 
-#include "Drawable.h"
 #include "../util/Rectangle2D.h"
-#include <stdio.h>
+#include <3ds.h>
 
 namespace GP {
     
     class Drawable {
     public:
         Rectangle2D dimensions;
-        virtual void draw() {
-            printf("Drawed");
-        }
+        virtual void draw(u8* screen) {
+            //printf("Drawed");
+        };
     };
 }
 

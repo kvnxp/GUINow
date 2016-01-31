@@ -10,7 +10,7 @@
  *
  * Created on 26 januari 2016, 0:10
  */
-
+#pragma once
 #ifndef EVENTHANDLER_H
 #define EVENTHANDLER_H
 
