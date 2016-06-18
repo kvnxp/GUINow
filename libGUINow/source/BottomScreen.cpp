@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-#include "3DSGUI/screen/BottomScreen.h"
+#include "GUINow/screen/BottomScreen.h"
 #include <3ds.h>
 
 namespace GP {

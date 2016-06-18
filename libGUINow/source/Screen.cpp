@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 #include <stdio.h>
-#include "3DSGUI/screen/Screen.h"
+#include <cstring>
+#include "GUINow/screen/Screen.h"
+#include "GUINow/draw/Draw.h"
 
 namespace GP {
     
@@ -29,6 +31,11 @@ namespace GP {
     void Screen::fill(Drawable *object) {
         this->objects[this->objectCount++] = object;
         this->changed.trigger();
+    }
+
+    void Screen::clear() {
+        //Draw::rectangle(this->buffer, Rectangle2D(1, 1, 200, 200), Color(0x00, 0x00, 0x00));
+        memset(this->buffer, 0, this->dimensions.x * this->dimensions.y * 3);
     }
     
     void Screen::getFrameBuffer() {

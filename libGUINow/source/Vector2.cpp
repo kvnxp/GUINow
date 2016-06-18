@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-#include "3DSGUI/util/Vector2.h"
+#include "GUINow/util/Vector2.h"
 
 namespace GP {
     

@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 
-#include "3DSGUI/tools/Text.h"
-#include "3DSGUI/util/Font.h"
+#include "GUINow/tools/Text.h"
+#include "GUINow/util/Font.h"
 #include <cstring>
 #include <stdio.h>
 

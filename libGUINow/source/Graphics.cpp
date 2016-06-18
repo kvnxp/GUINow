@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 
-#include "3DSGUI/util/Graphics.h"
-#include "3DSGUI/draw/Draw.h"
+#include "GUINow/util/Graphics.h"
+#include "GUINow/draw/Draw.h"
 #include <3ds.h>
 
 namespace GP {
@@ -54,7 +54,8 @@ namespace GP {
     }
     
     void Graphics::changeFrameBuffers() {
-        if(Graphics::changeBuffers) {
+        
+        if(Graphics::changeBuffers || true) {
             gfxSwapBuffers();
             Graphics::getFrameBuffers();
         }

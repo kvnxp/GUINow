@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-#include "3DSGUI/util/Gui.h"
-#include "3DSGUI/util/Timer.h"
-#include "3DSGUI/util/Keys.h"
-#include "3DSGUI/util/Graphics.h"
+#include "GUINow/util/Gui.h"
+#include "GUINow/util/Timer.h"
+#include "GUINow/util/Keys.h"
+#include "GUINow/util/Graphics.h"
 
 namespace GP {
     
@@ -32,12 +32,12 @@ namespace GP {
         return true;
     }
     
-    /*bool Gui::loop(int offset) {
+    bool Gui::loop(int &offset) {
         if(offset <= 0) {
             return false;
         }
         return Gui::loop();
-    }*/
+    }
     
     void Gui::stop() {
         Gui::run = false;

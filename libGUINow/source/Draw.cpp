@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-#include "3DSGUI/draw/Draw.h"
+#include "GUINow/draw/Draw.h"
 #include <math.h>
 
 namespace GP {
@@ -55,9 +55,22 @@ namespace GP {
             }
         }
     }
+
+    void Draw::rectangle(u8* screen, Vector2 rectangle, Color color) {
+        int i, j;
+        for(i = 0; i < rectangle.x; i++) {
+            for(j = 0; j < rectangle.y; j++) {
+                Draw::pixel(screen, rectangle.x + i, rectangle.y + j, color);
+            }
+        }
+    }
     
     void Draw::rectangle(Screen* screen, Rectangle2D rectangle, Color color) {
         Draw::rectangle(screen->buffer, rectangle, color);
+    }
+
+    void Draw::rectangle(Screen* screen, Vector2 dimensions, Color color) {
+        Draw::rectangle(screen->buffer, dimensions, color);
     }
     
     void Draw::elipse(u8* screen, Rectangle2D dimensions, Color backgroundColor) {

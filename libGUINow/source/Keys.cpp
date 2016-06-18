@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-#include "3DSGUI/util/Keys.h"
+#include "GUINow/util/Keys.h"
 
 namespace GP {
     

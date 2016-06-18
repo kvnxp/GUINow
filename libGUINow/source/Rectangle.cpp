@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 
-#include "3DSGUI/tools/Rectangle.h"
-#include "3DSGUI/draw/Draw.h"
+#include "GUINow/tools/Rectangle.h"
+#include "GUINow/draw/Draw.h"
 
 namespace GP {
     

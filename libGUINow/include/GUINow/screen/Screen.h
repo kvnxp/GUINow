@@ -27,13 +27,18 @@ namespace GP {
         Drawable** objects;
         int objectCount;
     public:
+
         PasiveEventHandler changed;
+
         u8* buffer;
         Screen();
+
         ScreenType type;
         Vector2 dimensions;
+
         int draw();
         void fill(Drawable *object);
+        void clear();
         virtual void getFrameBuffer();
     };
 }

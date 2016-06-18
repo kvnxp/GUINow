@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-#include "3DSGUI/tools/Button.h"
-#include "3DSGUI/screen/Screen.h"
+#include "GUINow/tools/Button.h"
+#include "GUINow/screen/Screen.h"
 #include <cstring>
 #include <stdio.h>
-#include "3DSGUI/util/Color.h"
-#include "3DSGUI/draw/Draw.h"
-#include "3DSGUI/util/Font.h"
+#include "GUINow/util/Color.h"
+#include "GUINow/draw/Draw.h"
+#include "GUINow/util/Font.h"
 
 namespace GP {
     
@@ -28,7 +28,7 @@ namespace GP {
     
     int Button::draw(u8* screen) {
         //printf("fghjk%s\n", this->text);
-        Draw::rectangle(screen, this->dimensions, Color(0xFF, 0x00, 0x00));
+        Draw::rectangle(screen, this->dimensions, Color(0x00, 0xFF, 0x00));
         Font::drawString(screen, this->dimensions, this->text, this->textColor);
         
         return 1;

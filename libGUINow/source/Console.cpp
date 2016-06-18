@@ -1,4 +1,4 @@
-#include "3DSGUI/util/Console.h"
+#include "GUINow/util/Console.h"
 #include <string.h>
 
 namespace GP {

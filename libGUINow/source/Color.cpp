@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-#include "3DSGUI/util/Color.h"
+#include "GUINow/util/Color.h"
 
 namespace GP {
     

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-#include "3DSGUI/util/Timer.h"
+#include "GUINow/util/Timer.h"
 #include <unistd.h>
 #include <stdio.h>
 

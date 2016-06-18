@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-#include "3DSGUI/util/Font.h"
+#include "GUINow/util/Font.h"
 #include <string.h>
 
 namespace GP {

@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 
-#include "3DSGUI/tools/Elipse.h"
-#include "3DSGUI/draw/Draw.h"
+#include "GUINow/tools/Elipse.h"
+#include "GUINow/draw/Draw.h"
 
 namespace GP {
     

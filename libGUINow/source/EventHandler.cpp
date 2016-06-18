@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-#include "3DSGUI/event/EventHandler.h"
+#include "GUINow/event/EventHandler.h"
 namespace GP {
     
     EventHandler::EventHandler() {

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-#include "3DSGUI/event/PasiveEventHandler.h"
+#include "GUINow/event/PasiveEventHandler.h"
 
 namespace GP {
     

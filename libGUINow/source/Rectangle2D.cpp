@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-#include "3DSGUI/util/Rectangle2D.h"
+#include "GUINow/util/Rectangle2D.h"
 
 namespace GP {
     

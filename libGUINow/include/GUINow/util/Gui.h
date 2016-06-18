@@ -21,6 +21,7 @@ namespace GP {
     public:
         static void setFPS(int fps);
         static bool loop();
+        static bool loop(int &offset);
         static void stop();
     };
 }
