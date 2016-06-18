@@ -5,6 +5,7 @@
 export DEVKITARM=/opt/devkitPro/devkitARM
 export DEVKITPRO=/opt/devkitPro
 
+
 ifeq ($(strip $(DEVKITARM)),)
 $(error "Please set DEVKITARM in your environment. export DEVKITARM=<path to>devkitARM")
 endif
@@ -29,14 +30,14 @@ include $(DEVKITARM)/3ds_rules
 #     - icon.png
 #     - <libctru folder>/default_icon.png
 #---------------------------------------------------------------------------------
-TARGET		:=	GUINow rockpaperscissors
+TARGET		:=	rockpaperscissors
 BUILD		:=	build
 SOURCES		:=	source
 DATA		:=	data
 INCLUDES	:=	include
 
-APP_TITLE		:= GUINow rockpaperscissors
-APP_DESCRIPTION	:= GUINow rockpaperscissors example
+APP_TITLE		:= rockpaperscissors
+APP_DESCRIPTION	:= GUINow rockpaperscissors sample
 APP_AUTHOR		:= Tjessx
 
 #---------------------------------------------------------------------------------
@@ -61,7 +62,7 @@ LIBS	:= -lGUINow -lctru -lm
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:= $(CTRULIB) $(CURDIR)/../lib3DSGUI
+LIBDIRS	:= $(CTRULIB)
 
 
 #---------------------------------------------------------------------------------
@@ -143,11 +144,11 @@ $(TARGET)-strip.elf: $(BUILD)
 #---------------------------------------------------------------------------------
 cci: $(TARGET)-strip.elf
 	@makerom -f cci -rsf resources/$(TARGET).rsf -target d -exefslogo -elf $(TARGET)-strip.elf -o $(TARGET).3ds
-	@echo "built ... 3DSGUI_sample.3ds"
+	@echo "built ... sf2d_sample.3ds"
 #---------------------------------------------------------------------------------
 cia: $(TARGET)-strip.elf
 	@makerom -f cia -o $(TARGET).cia -elf $(TARGET)-strip.elf -rsf resources/$(TARGET).rsf -icon resources/icon.icn -banner resources/banner.bnr -exefslogo -target t
-	@echo "built ... 3DSGUI_sample.cia"
+	@echo "built ... sf2d_sample.cia"
 #---------------------------------------------------------------------------------
 send: $(BUILD)
 	@3dslink $(TARGET).3dsx

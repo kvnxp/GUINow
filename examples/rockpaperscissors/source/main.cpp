@@ -1,5 +1,5 @@
 #include <3ds.h>
-#include <GUI3DS.h>
+#include <GUINow.h>
 #include <stdio.h>
 #include <stdlib.h> //rand
 /*
