@@ -9,7 +9,7 @@
 
 namespace GP {
     
-    Rectangle::Rectangle() {
+    Rectangle::Rectangle() : Drawable() {
         this->dimensions.set(0, 0, 0, 0);
         this->backgroundColor = Color(0xFF, 0xFF, 0xFF);
     }

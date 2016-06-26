@@ -22,7 +22,6 @@ namespace GP {
     KeyState Keys::select = KeyState::UP;
     
     void Keys::scan() {
-        hidScanInput();
         u32 kDown = hidKeysDown();
         u32 kHeld = hidKeysHeld();
         

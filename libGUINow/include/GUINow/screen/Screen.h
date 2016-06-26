@@ -23,7 +23,7 @@
 namespace GP {
     
     class Screen {
-    private:
+    protected:
         Drawable** objects;
         int objectCount;
     public:
@@ -37,11 +37,12 @@ namespace GP {
         Vector2 dimensions;
 
         int draw();
+        void checkEvents();
         void fill(Drawable *object);
         void clear();
         virtual void getFrameBuffer();
+        virtual void checkTouch() {};
     };
 }
 
 #endif /* SCREEN_H */
-

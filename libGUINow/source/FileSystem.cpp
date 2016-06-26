@@ -5,62 +5,51 @@
  */
 
 #include "GUINow/util/FileSystem.h"
-#include <vector>
-#include <string>
 
 namespace GP {
     
     FileSystem::FileSystem() {
-		romfsInit();
-    	chdir("sdmc:/");
+
+    }
+
+    FileSystem::FileSystem(char* filename) {
+    	this->setFile(filename);
     }
 
     FileSystem::~FileSystem() {
-		romfsExit();
+
     }
 
-    std::string FileSystem::list(std::string directory) {
-    	std::vector<std::string> result;
-    	std::string t = "test,";
-
-	    bool hasSlash = directory.size() != 0 && directory[directory.size() - 1] == '/';
-	    const std::string dirWithSlash = hasSlash ? directory : directory + "/";
-
-	    DIR* dir = opendir(dirWithSlash.c_str());
-	    if(dir == NULL) {
-	        return "nope";// result;
-	    }
-
-	    while(true) {
-	        struct dirent* ent = readdir(dir);
-	        if(ent == NULL) {
-	            break;
-	        }
-
-	        std::string path = dirWithSlash + std::string(ent->d_name);
-	        result.push_back(path);
-	        t = t + path;
-	    }
-
-	    closedir(dir);
-    	return t;
+    void FileSystem::setFile(char* filename) {
+    	strcpy(this->filename, filename);
     }
 
-    void FileSystem::create(std::string filename, u8* data) {
-    	FILE * pFile;
-    	chdir("sdmc:/");
-		pFile = fopen ("tekst.txt", "wb");
-		fwrite (data , sizeof(u8), sizeof(data), pFile);
-		fclose (pFile);
+    bool FileSystem::startWrite() {
+    	/*std::ofstream temp(this->filename, std::ios::binary | std::ios::out);
+    	this->streamWrite = &temp;
+
+    	if (this->streamWrite.good() && this->streamWrite.is_open()) {
+    		return true;
+    	}*/
+
+    	return false;
+	}
+    bool FileSystem::startRead() {
+    	/*std::ifstream temp(this->filename, std::ios::binary | std::ios::in);
+    	this->streamRead = &temp;
+
+    	if (this->streamRead.good() && this->streamRead.is_open()) {
+    		return true;
+    	}*/
+
+    	return false;
     }
 
-    void FileSystem::read(char* file, char* buffer) {
-    	FILE* myfile = fopen(file, "rb");
-		if (myfile != NULL) {
-		    short stringlength = 6;
-		    fseek(myfile , 0, SEEK_SET);
-		    fread(&buffer[0], sizeof(char), (size_t)stringlength, myfile);
-		    fclose(myfile );
-		}
+    void FileSystem::write(void* content) {
+    	//this->streamWrite.write(reinterpret_cast<const char*>(&content), sizeof(content));
+    }
+
+    void FileSystem::read(void* buffer, int length) {
+    	//this->streamRead.read(reinterpret_cast<char*>(&buffer), sizeof(buffer));
     }
 }

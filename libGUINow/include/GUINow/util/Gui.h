@@ -18,6 +18,7 @@ namespace GP {
     class Gui {
         static int fps;
         static bool run;
+        static int actualFps;
     public:
         static void setFPS(int fps);
         static bool loop();

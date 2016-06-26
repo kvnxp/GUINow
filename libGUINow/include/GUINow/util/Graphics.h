@@ -32,6 +32,11 @@ namespace GP {
         static int draw();
         static void changeFrameBuffers();
         static void getFrameBuffers();
+        static void clearCurrent();
+        static void clear();
+
+        static void warnEmulator();
+        static void checkEmulator();
     };
 }
 

@@ -15,21 +15,35 @@
 namespace GP {
     
     Button::Button() : Drawable() {
-        
+        Button::setDefault();
     }
     
     Button::Button(char* text) : Drawable() {
         std::strcpy(this->text, text);
+        Button::setDefault();
     }
-    
+
+    void Button::setDefault() {
+        this->textColor = Color::RED;
+        this->backgroundColor = Color::GREEN;
+
+        this->textHoldColor = Color::GREEN;
+        this->backgroundHoldColor = Color::RED;
+
+        this->addEvent(&this->hover);
+        this->addEvent(&this->touch);
+    }   
+
     void Button::setText(char* text) {
         std::strcpy(this->text, text);
     }
     
     int Button::draw(u8* screen) {
+        bool holding = this->hover.getState();
         //printf("fghjk%s\n", this->text);
-        Draw::rectangle(screen, this->dimensions, Color(0x00, 0xFF, 0x00));
-        Font::drawString(screen, this->dimensions, this->text, this->textColor);
+        Draw::emptyRectangle(screen, this->dimensions, Color(0x88, 0x88, 0x88));
+        Draw::rectangle(screen, Rectangle2D(this->dimensions.x + 1, this->dimensions.y + 1, this->dimensions.width - 2, this->dimensions.height - 2), holding ? this->backgroundHoldColor : this->backgroundColor);
+        Font::drawString(screen, this->dimensions, this->text, holding ? this->textHoldColor : this->textColor);
         
         return 1;
     }
@@ -37,4 +51,17 @@ namespace GP {
     void Button::setColor(Color color) {
         this->textColor = color;
     }
+
+    void Button::setHoldColor(Color color) {
+        this->textHoldColor = color;
+    }
+
+    void Button::setBackgroundColor(Color color) {
+        this->backgroundColor = color;
+    }
+
+    void Button::setBackgroundHoldColor(Color color) {
+        this->backgroundHoldColor = color;
+    }
+
 }

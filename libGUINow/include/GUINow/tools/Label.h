@@ -5,55 +5,41 @@
  */
 
 /* 
- * File:   Button.h
+ * File:   Label.h
  * Author: bert
  *
- * Created on 26 januari 2016, 0:02
+ * Created on 20 juni 2016, 0:02
  */
 #pragma once
-#ifndef BUTTON_H
-#define BUTTON_H
+#ifndef LABEL_H
+#define LABEL_H
 
 #include "../draw/Drawable.h"
 #include "../util/Rectangle2D.h"
 #include "../util/Color.h"
-#include "../event/EventTouch.h"
+#include "../util/Timer.h"
 #include <3ds.h>
 
 namespace GP {
     
-    class Button : public Drawable {
+    class Label : public Drawable {
     private:
         char text[40];
     public:
-        
         Color textColor;
-        Color textHoldColor;
-
         Color backgroundColor;
-        Color backgroundHoldColor;
-
-        EventTouch touch;
         
-        Button();
-        Button(char* text);
-
-        void setDefault();
+        Label();
+        Label(char* text);
         
         void setText(char* text);
-        char* setText();
 
         void setColor(Color color);
-        void setHoldColor(Color color);
-
         void setBackgroundColor(Color color);
-        void setBackgroundHoldColor(Color color);
-        
+
         using Drawable::draw;
         int draw(u8* screen);
-        
     };
 }
 
-#endif /* BUTTON_H */
-
+#endif /* LABEL_H */

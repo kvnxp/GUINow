@@ -28,9 +28,9 @@ namespace GP {
         Color(u8 r, u8 g, u8 b);
         void set(u8 r, u8 g, u8 b);
         
-        static Color Red;
-        static Color Green;
-        static Color Blue;
+        static Color RED;
+        static Color GREEN;
+        static Color BLUE;
     };
 }
 

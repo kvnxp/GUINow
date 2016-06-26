@@ -10,7 +10,11 @@
 namespace GP {
     
     void Draw::pixel(u8 *screen, int x, int y, Color color) {
-        y = 240 - y;
+        if(x < 0 || y < 0) {
+            return;
+        }
+        
+        y = 240 - y - 1;
         int hulp = x;
         x = y;
         y = hulp;
@@ -39,30 +43,37 @@ namespace GP {
             diffY = diffY * -1;
         }
         
-        for(int i = 0; i < diffX; i++) {
+        for(int i = 0; i <= diffX; i++) {
             Draw::pixel(screen, x1 + i, y1, color);
         }
-        for(int i = 0; i < diffY; i++) {
+        for(int i = 0; i <= diffY; i++) {
             Draw::pixel(screen, x1, y1 + i, color);
         }
     }
     
     void Draw::rectangle(u8* screen, Rectangle2D rectangle, Color color) {
         int i, j;
-        for(i = 0; i < rectangle.width; i++) {
-            for(j = 0; j < rectangle.height; j++) {
+        for(i = 0; i <= rectangle.width; i++) {
+            for(j = 0; j <= rectangle.height; j++) {
                 Draw::pixel(screen, rectangle.x + i, rectangle.y + j, color);
             }
         }
     }
 
-    void Draw::rectangle(u8* screen, Vector2 rectangle, Color color) {
+    void Draw::rectangle(u8* screen, Vector2 vector, Color color) {
         int i, j;
-        for(i = 0; i < rectangle.x; i++) {
-            for(j = 0; j < rectangle.y; j++) {
-                Draw::pixel(screen, rectangle.x + i, rectangle.y + j, color);
+        for(i = 0; i <= vector.x; i++) {
+            for(j = 0; j <= vector.y; j++) {
+                Draw::pixel(screen, vector.x + i, vector.y + j, color);
             }
         }
+    }
+
+    void Draw::emptyRectangle(u8* screen, Rectangle2D rectangle, Color color) {
+        Draw::line(screen, rectangle.x, rectangle.y, rectangle.x + rectangle.width, rectangle.y, color);
+        Draw::line(screen, rectangle.x, rectangle.y, rectangle.x, rectangle.y + rectangle.height, color);
+        Draw::line(screen, rectangle.x + rectangle.width, rectangle.y, rectangle.x + rectangle.width, rectangle.y + rectangle.height, color);
+        Draw::line(screen, rectangle.x, rectangle.y + rectangle.height, rectangle.x + rectangle.width, rectangle.y + rectangle.height, color);
     }
     
     void Draw::rectangle(Screen* screen, Rectangle2D rectangle, Color color) {
@@ -71,6 +82,10 @@ namespace GP {
 
     void Draw::rectangle(Screen* screen, Vector2 dimensions, Color color) {
         Draw::rectangle(screen->buffer, dimensions, color);
+    }
+
+    void Draw::emptyRectangle(Screen* screen, Rectangle2D rectangle, Color color) {
+        Draw::rectangle(screen->buffer, rectangle, color);
     }
     
     void Draw::elipse(u8* screen, Rectangle2D dimensions, Color backgroundColor) {

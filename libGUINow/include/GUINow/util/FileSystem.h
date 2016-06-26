@@ -14,26 +14,33 @@
 #ifndef FileSystem_H
 #define FileSystem_H
 
-#include <sys/unistd.h>
-#include <dirent.h>
-
-#include <algorithm>
-#include <cstdio>
-#include <string>
-
 #include <3ds.h>
 #include <3ds/services/fs.h>
+
+#include <cstring>
+#include <fstream>
 
 namespace GP {
     
     class FileSystem {
     private:
+    	char* filename;
+
+    	std::ifstream streamRead;
+    	std::ofstream streamWrite;
+
     public:
         FileSystem();
+        FileSystem(char* filename);
         ~FileSystem();
-        std::string list(std::string directory);
-        void create(std::string filename, u8* data);
-        void read(char* file, char* buffer);
+        
+        void setFile(char* filename);
+
+        bool startWrite();
+        bool startRead();
+
+        void write(void* content);
+        void read(void* buffer, int length);
     };
 }
 

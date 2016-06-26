@@ -14,16 +14,25 @@
 #ifndef TIMER_H
 #define TIMER_H
 
+#include <3ds.h>
+
 namespace GP {
     
     class Timer {
     private:
         static int milestone;
+        static u64 previousFrame;
+        static u64 currentFrame;
     public:
+    	static float actualFps;
+    	static int roundedFps;
+
         static void sleep(int microsecond);
         static void sleepu(int milisecond);
         static void setMileStone();
         static void sleep_mile(int miliseconds);
+        static u64 getTime();
+        static void frame();
     };
 }
 

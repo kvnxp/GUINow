@@ -12,7 +12,7 @@ namespace GP {
     
     Screen::Screen() {
         this->type = ScreenType::UNDEFINED;
-        this->objects = new Drawable * [3];
+        this->objects = new Drawable * [10];
         this->objectCount = 0;
     }
     
@@ -26,6 +26,12 @@ namespace GP {
         this->changed.trigger();
         
         return drawCount;
+    }
+
+    void Screen::checkEvents() {
+         for(int i = 0; i < this->objectCount; i++) {
+            this->objects[i]->checkEvents();
+        }
     }
     
     void Screen::fill(Drawable *object) {

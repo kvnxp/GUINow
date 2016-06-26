@@ -35,9 +35,11 @@ namespace GP {
 
         static void rectangle(u8* screen, Vector2 dimensions, Color color);
         static void rectangle(Screen* screen, Vector2 dimensions, Color color);
+
+        static void emptyRectangle(u8* screen, Rectangle2D dimensions, Color color);
+        static void emptyRectangle(Screen* screen, Rectangle2D dimensions, Color color);
         
         static void elipse(u8* screen, Rectangle2D dimensions, Color backgroundColor);
-        static void line();
         
         static void clear(u8* screen, Vector2 dimensions);
     };

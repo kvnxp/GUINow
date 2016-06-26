@@ -8,9 +8,9 @@
 
 namespace GP {
     
-    Color Color::Red = Color(0xFF, 0x00, 0x00);
-    Color Color::Green = Color(0x00, 0xFF, 0x00);
-    Color Color::Blue = Color(0x00, 0x00, 0xFF);
+    Color Color::RED = Color(0xFF, 0x00, 0x00);
+    Color Color::GREEN = Color(0x00, 0xFF, 0x00);
+    Color Color::BLUE = Color(0x00, 0x00, 0xFF);
     
     Color::Color() {
         this->r = 0xFF;

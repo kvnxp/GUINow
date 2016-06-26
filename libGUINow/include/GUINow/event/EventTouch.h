@@ -5,25 +5,26 @@
  */
 
 /* 
- * File:   BottomScreen.h
+ * File:   EventHover.h
  * Author: bert
  *
- * Created on 25 januari 2016, 23:49
+ * Created on 22 juni 2016, 0:18
  */
 #pragma once
-#ifndef BOTTOMSCREEN_H
-#define BOTTOMSCREEN_H
+#ifndef EVENTTOUCH_H
+#define EVENTTOUCH_H
 
-#include "Screen.h"
+#include "Event.h"
 #include "../util/Touch.h"
 
 namespace GP {
     
-    class BottomScreen : public Screen {
+    class EventTouch : public Event {
     public:
-        BottomScreen();
-        void getFrameBuffer();
+    	bool focus;
+        void check(Rectangle2D rectangle);
     };
 }
 
-#endif /* BOTTOMSCREEN_H */
+#endif /* EVENTTOUCH_H */
+

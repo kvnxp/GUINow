@@ -15,16 +15,27 @@
 #define DRAWABLE_H
 
 #include "../util/Rectangle2D.h"
+#include "../event/Event.h"
+#include "../event/EventHover.h"
 #include <3ds.h>
 
 namespace GP {
     
     class Drawable {
+    protected:
+    	Event** events;
+    	int eventCount;
     public:
         Rectangle2D dimensions;
-        virtual int draw(u8* screen) {
-            return 0;
-        };
+
+        //events, since everything drawalble can be clicked on!
+        EventHover hover;
+        
+        Drawable();
+        
+        virtual int draw(u8* screen);
+        virtual void addEvent(Event* event);
+        virtual void checkEvents();
     };
 }
 

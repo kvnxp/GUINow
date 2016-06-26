@@ -5,6 +5,7 @@
  */
 
 #include "GUINow/screen/BottomScreen.h"
+#include "GUINow/util/Console.h"
 #include <3ds.h>
 
 namespace GP {

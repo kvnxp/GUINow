@@ -24,6 +24,11 @@ namespace GP {
     }
         
     bool PasiveEventHandler::getState() {
-        return this->hasEvent;
+        if(this->hasEvent) {
+            this->hasEvent = false;
+            return true;
+        }
+
+        return false;
     }
 }

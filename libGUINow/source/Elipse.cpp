@@ -9,12 +9,12 @@
 
 namespace GP {
     
-    Elipse::Elipse() {
+    Elipse::Elipse() : Drawable() {
         this->dimensions.set(0, 0, 0, 0);
         this->backgroundColor = Color(0xFF, 0xFF, 0xFF);
     }
     
-    Elipse::Elipse(int radius) {
+    Elipse::Elipse(int radius) : Drawable() {
         this->dimensions.height = radius;
         this->dimensions.width = radius;
         this->backgroundColor = Color(0xFF, 0xFF, 0xFF);

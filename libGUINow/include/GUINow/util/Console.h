@@ -27,6 +27,7 @@ namespace GP {
     	Text* text;
     	int textCounter;
     public:
+        static Console console;
 
         Console();
 
