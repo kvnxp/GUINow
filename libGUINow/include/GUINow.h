@@ -16,6 +16,7 @@
 #include "GUINow/draw/Drawable.h"
 
 #include "GUINow/event/PasiveEvent.h"
+#include "GUINow/event/EventDrag.h"
 #include "GUINow/event/Event.h"
 #include "GUINow/event/EventHover.h"
 #include "GUINow/event/EventTouch.h"
@@ -29,6 +30,7 @@
 #include "GUINow/tools/Elipse.h"
 #include "GUINow/tools/Label.h"
 #include "GUINow/tools/Rectangle.h"
+#include "GUINow/tools/Slider.h"
 #include "GUINow/tools/Text.h"
 
 #include "GUINow/util/Color.h"
