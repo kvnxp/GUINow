@@ -32,5 +32,5 @@ to include this framework in your homebrew application:
 See future examples
 
 ####credits
-- Everyone involved in the homebrew scene that made this possible.
-- Xerpi for [this makefile](https://github.com/xerpi/sf2dlib/blob/master/libsf2d/Makefile)
+> - Everyone involved in the homebrew scene that made this possible.
+> - Xerpi for [this makefile](https://github.com/xerpi/sf2dlib/blob/master/libsf2d/Makefile)
