@@ -13,14 +13,9 @@ typedef enum Choice {
 GP::Button win;
 
 bool wins(Choice player1, Choice player2) {
-    
-    if((int)player1 < (int)player2 && (int)player1 != 0) {
-        return false;
-    }
-    else {
-        return true;
-    }
+    return ((int)player1 < (int)player2 && (int)player1 != 0);
 }
+
 void game(Choice player1) {
     Choice player2 = static_cast<Choice>((int)rand() * 3);
     
