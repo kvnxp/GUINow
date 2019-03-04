@@ -96,12 +96,12 @@ int main(int argc, char** argv) {
         }
     }
     
+    
     GP::Console console = GP::Console();
 
-    console.addText("Hallo liefje");
-    console.addText("Dit is een console");
-
+    console.addText("Example console text");
     top.fill(&console);
+    
     GP::Graphics::setScreen(&top);
     GP::Graphics::setScreen(&bottom);
     while(GP::Gui::loop() && aptMainLoop()) {
